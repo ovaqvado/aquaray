@@ -3,6 +3,7 @@ import style from "./style.module.scss";
 import Link from "next/link";
 import Image from "next/image";
 import Logo from "../../images/logo.svg";
+import Gradient from "../../images/gradient_footer.svg";
 
 const Footer = () => {
     return (

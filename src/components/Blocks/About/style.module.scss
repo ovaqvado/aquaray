@@ -1,0 +1,199 @@
+@use "../../../app/variables/mixins" as *;
+@use "../../../app/variables/colors" as *;
+
+.about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.container_text {
+    text-align: center;
+}
+
+.title {
+    margin-bottom: 20px;
+    @extend %font-outfit-bold;
+    font-size: 50px;
+    background: $gradient;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}
+
+.description {
+    font-size: 18px;
+}
+
+.container_change {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.text_change {
+    background: $gradient;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    font-weight: 500;
+    font-size: 25px;
+}
+
+.btn_change {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    border: none;
+    background-color: $lightblue;
+}
+
+.container_calculator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    padding: 30px;
+    gap: 40px;
+    border-radius: 12px;
+    margin-top: 133px;
+    width: 605px;
+    height: 499px;
+    background: $darkblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: 12px;
+        padding: 1px;
+        background: linear-gradient(90deg, #6d37fe, #00ffff);
+        -webkit-mask:
+            linear-gradient(#fff 0 0) content-box,
+            linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+    }
+}
+
+.container_swap {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 545px;
+    height: 100px;
+    justify-content: space-between;
+    opacity: 1;
+    border-radius: 12px;
+    padding: 20px;
+    background-color: $lightblue;
+}
+
+.container_swap:first-child {
+    margin-bottom: 12px;
+}
+
+.change_currency {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 148px;
+    height: 60px;
+    gap: 12px;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: $darkblue;
+}
+
+.valut {
+    text-align: right;
+}
+
+.currency {
+    font-size: 25px;
+    color: $white;
+}
+
+.usd {
+    color: $gray;
+}
+
+.rate {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+    color: $gray;
+}
+
+$gradient: linear-gradient(90deg, #6d37fe 0%, #00ffff 100%);
+$gradient50: linear-gradient(
+    90deg,
+    rgba(109, 55, 254, 0.5) 0%,
+    rgba(0, 255, 255, 0.5) 100%
+);
+
+.btn_run {
+    width: 545px;
+    height: 63px;
+    border: none;
+    border-radius: 12px;
+    padding: 20px;
+    color: #fff;
+    background: transparent;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: transform 0.2s ease;
+}
+
+.btn_run::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 2px;
+    border-radius: 12px;
+    background: $gradient;
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    z-index: -2;
+}
+
+/* фон */
+.btn_run::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 12px;
+    background: $gradient50;
+    z-index: -1;
+    transition: background 0.4s ease;
+}
+
+.btn_run:hover::after {
+    background: $gradient;
+}
+
+.btn_run:hover {
+    transform: translateY(-2px);
+}
