@@ -1,0 +1,32 @@
+@use "../../app/variables/colors" as colors;
+.header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 30px 100px;
+}
+
+.navList {
+    font-weight: 400;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 40px;
+    cursor: pointer;
+    list-style: none;
+    font-size: 18px;
+}
+
+.navItem {
+    transition: 0.2s;
+}
+
+.navItem:hover {
+    background: colors.$gradient;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}

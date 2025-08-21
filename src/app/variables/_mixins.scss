@@ -1,0 +1,11 @@
+@use "./variables" as *;
+
+%font-outfit-regular {
+    font-family: $font-outfit;
+    font-weight: $font-outfit-regular;
+}
+
+%font-outfit-bold {
+    font-family: $font-outfit;
+    font-weight: $font-outfit-bold;
+}
