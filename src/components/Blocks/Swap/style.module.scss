@@ -1,0 +1,277 @@
+@use "../../../app/variables/mixins" as *;
+@use "../../../app/variables/colors" as *;
+
+.swap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.container_text {
+    text-align: center;
+}
+
+.title {
+    margin-bottom: 20px;
+    @extend %font-outfit-bold;
+    font-size: 50px;
+    background: $gradient;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}
+
+.description {
+    font-size: 18px;
+}
+
+.container_change {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.text_change {
+    background: $gradient;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    font-weight: 500;
+    font-size: 25px;
+}
+
+.btn_change {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    background-color: $lightblue;
+    transition: 1s;
+    &:hover {
+        background: linear-gradient(
+            90deg,
+            #6d37fe,
+            #00ffff
+        ); // градиент при наведении
+    }
+}
+
+.container_calculator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    padding: 30px;
+    gap: 40px;
+    border-radius: 12px;
+    margin-top: 133px;
+    width: 605px;
+    height: 499px;
+    background: $darkblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.container_swap {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 545px;
+    height: 100px;
+    justify-content: space-between;
+    opacity: 1;
+    border-radius: 12px;
+    padding: 20px;
+    background-color: $lightblue;
+    position: relative;
+    transition: all 0.3s ease;
+
+    &.active {
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 12px;
+            padding: 1px;
+            background: linear-gradient(90deg, #6d37fe, #00ffff);
+            -webkit-mask:
+                linear-gradient($white 0 0) content-box,
+                linear-gradient($white 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            opacity: 1;
+            pointer-events: none;
+        }
+    }
+}
+
+.container_swap:first-child {
+    margin-bottom: 12px;
+}
+
+.change_currency {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+    gap: 12px;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: $darkblue;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.name {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+/* псевдоэлемент для рамки */
+.change_currency::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 10px;
+    padding: 1px; /* толщина рамки */
+    background: linear-gradient(90deg, #6d37fe, #00ffff);
+    -webkit-mask:
+        linear-gradient($white 0 0) content-box,
+        linear-gradient($white 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0; /* по умолчанию скрыт */
+    transition: opacity 0.3s ease;
+    pointer-events: none; /* чтобы рамка не мешала кликам */
+}
+
+/* показать рамку при наведении */
+.change_currency:hover::before {
+    opacity: 1;
+}
+
+.valut {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 4px;
+}
+
+.currency {
+    font-size: 25px;
+    color: $white;
+    margin: 0;
+    width: 320px;
+    overflow-x: hidden;
+}
+
+.currency_input {
+    font-size: 25px;
+    color: $white;
+    background: transparent;
+    border: none;
+    outline: none;
+    text-align: right;
+    width: 200px;
+    padding: 0;
+    margin: 0;
+
+    &::placeholder {
+        color: rgba($white, 0.5);
+    }
+
+    &:focus {
+        outline: none;
+        box-shadow: none;
+    }
+}
+
+.usd {
+    color: $gray;
+    margin: 0;
+    font-size: 14px;
+}
+
+.rate {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+    color: $gray;
+    font-size: 14px;
+}
+
+$gradient: linear-gradient(90deg, #6d37fe 0%, #00ffff 100%);
+$gradient50: linear-gradient(
+    90deg,
+    rgba(109, 55, 254, 0.5) 0%,
+    rgba(0, 255, 255, 0.5) 100%
+);
+
+.btn_run {
+    width: 545px;
+    height: 63px;
+    border: none;
+    border-radius: 12px;
+    padding: 20px;
+    color: $white;
+    background: transparent;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: transform 0.2s ease;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.btn_run::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 2px;
+    border-radius: 12px;
+    background: $gradient;
+    -webkit-mask:
+        linear-gradient($white 0 0) content-box,
+        linear-gradient($white 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    z-index: -2;
+}
+
+/* фон */
+.btn_run::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 12box;
+    background: $gradient50;
+    z-index: -1;
+    transition: background 0.4s ease;
+}
+
+.btn_run:hover::after {
+    background: $gradient;
+}
+
+.btn_run:hover {
+    transform: translateY(-2px);
+}

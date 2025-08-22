@@ -1,0 +1,136 @@
+@use "../../../app/variables/mixins" as *;
+@use "../../../app/variables/colors" as *;
+
+.container_swap {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 545px;
+    height: 100px;
+    justify-content: space-between;
+    opacity: 1;
+    border-radius: 12px;
+    padding: 20px;
+    background-color: $lightblue;
+    position: relative;
+    transition: all 0.3s ease;
+
+    &.active {
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 12px;
+            padding: 1px;
+            background: linear-gradient(90deg, #6d37fe, #00ffff);
+            -webkit-mask:
+                linear-gradient($white 0 0) content-box,
+                linear-gradient($white 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            opacity: 1;
+            pointer-events: none;
+        }
+    }
+}
+
+.container_swap.active::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 12px;
+    box-shadow: 0 0 10px 2px #00ffff66;
+    pointer-events: none;
+    z-index: -1; // под контентом
+}
+
+.container_swap:first-child {
+    margin-bottom: 12px;
+}
+
+.change_currency {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+    gap: 12px;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: $darkblue;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.name {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.change_currency::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 10px;
+    padding: 1px;
+    background: linear-gradient(90deg, #6d37fe, #00ffff);
+    -webkit-mask:
+        linear-gradient($white 0 0) content-box,
+        linear-gradient($white 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.change_currency:hover::before {
+    opacity: 1;
+}
+
+.valut {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 4px;
+}
+
+.currency_input {
+    font-size: 25px;
+    color: $white;
+    background: transparent;
+    border: none;
+    outline: none;
+    text-align: right;
+    width: 300px;
+    padding: 0;
+    margin: 0;
+
+    &::placeholder {
+        color: rgba($white, 0.5);
+    }
+
+    &:focus {
+        outline: none;
+        box-shadow: none;
+    }
+}
+
+.usd {
+    color: $gray;
+    margin: 0;
+    font-size: 14px;
+}
+
+$gradient: linear-gradient(90deg, #6d37fe 0%, #00ffff 100%);
+$gradient50: linear-gradient(
+    90deg,
+    rgba(109, 55, 254, 0.5) 0%,
+    rgba(0, 255, 255, 0.5) 100%
+);

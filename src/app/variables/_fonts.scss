@@ -1,17 +1,5 @@
-@font-face {
-    font-family: "Outfit";
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src: url("https://fonts.gstatic.com/s/outfit/v11/QGYyz_MVcBeNPVVIoZ6M11vWm6E.woff2")
-        format("woff2");
-}
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap");
 
-@font-face {
-    font-family: "Outfit";
-    font-style: normal;
-    font-weight: 700;
-    font-display: swap;
-    src: url("https://fonts.gstatic.com/s/outfit/v11/QGYyz_MVcBeNPVVIoZ6M11vWm6E.woff2")
-        format("woff2");
-}
+$font-outfit: "Outfit", sans-serif;
+$font-outfit-regular: 400;
+$font-outfit-bold: 700;

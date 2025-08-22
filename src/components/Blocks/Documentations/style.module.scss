@@ -1,16 +1,16 @@
 @use "../../../app/variables/mixins" as *;
 @use "../../../app/variables/colors" as *;
 
-.swap {
+.documentations {
+    margin-top: 220px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 220px;
     gap: 40px;
 }
 
-.container_text {
+.text_container {
     text-align: center;
 }
 
@@ -29,28 +29,20 @@
     font-size: 18px;
 }
 
-.description {
-    max-width: 1173px;
-    font-size: 18px;
-    text-align: center;
-}
-
 .card_container {
     max-width: 1240px;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 30px;
 }
 
 .card {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    gap: 12px;
-    max-width: 288px;
-    height: 242px;
+    text-align: left;
+    gap: 20px;
+    max-width: 393px;
+    height: 201px;
     padding: 40px 20px;
     border-radius: 12px;
     background: linear-gradient(
@@ -82,8 +74,7 @@
 .title_card {
     font-weight: 500;
     font-size: 25px;
-    background: linear-gradient(90deg, #6d37fe 0%, #00ffff 100%);
-
+    background: linear-gradient(90deg, #6d37fe 0%, #00ffff 40%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -92,4 +83,28 @@
 
 .description_card {
     font-size: 18px;
+}
+
+.read_btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.read_text {
+    display: inline-block;
+    font-weight: 500;
+    background: linear-gradient(90deg, #6d37fe 0%, #00ffff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    transition: 0.2s ease-in-out;
+}
+
+.read_btn:hover .read_text {
+    background: $turquoise;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }

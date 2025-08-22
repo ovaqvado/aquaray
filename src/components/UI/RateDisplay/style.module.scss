@@ -1,0 +1,12 @@
+@use "../../../app/variables/mixins" as *;
+@use "../../../app/variables/colors" as *;
+
+.rate {
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+    justify-content: space-between;
+    margin-top: 20px;
+    color: $gray;
+    font-size: 14px;
+}

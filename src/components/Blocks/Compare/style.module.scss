@@ -1,0 +1,149 @@
+@use "../../../app/variables/mixins" as *;
+@use "../../../app/variables/colors" as *;
+
+.compare {
+    margin-top: 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+.text_container {
+    text-align: center;
+}
+
+.title {
+    margin-bottom: 12px;
+    @extend %font-outfit-bold;
+    font-size: 50px;
+    background: $gradient;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}
+
+.subtitle {
+    font-size: 18px;
+}
+
+.table {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 816px;
+    border-radius: 12px;
+    overflow: hidden;
+    backdrop-filter: blur(6px);
+    z-index: 1;
+    background: $darkblue;
+}
+
+/* Первая строка с градиентным фоном */
+.table_row:first-child {
+    position: relative;
+    padding: 20px;
+    border-radius: 12px 12px 0 0;
+    background: linear-gradient(90deg, #1ec9ff, #8f5aff);
+    color: $white;
+    z-index: 1;
+
+    /* если нужно, чтобы текст тоже был градиентным */
+    .table_text {
+        background: linear-gradient(90deg, #6d37fe, #00ffff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+}
+
+/* Убираем конфликтующий стиль прозрачного градиента */
+.table_row:first-child:not(.table_head) {
+    background: none;
+}
+
+/* градиентная рамка вокруг всей таблицы */
+.table::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 12px;
+    padding: 1px;
+    background: linear-gradient(90deg, #1ec9ff, #8f5aff);
+    -webkit-mask:
+        linear-gradient($white 0 0) content-box,
+        linear-gradient($white 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    z-index: -1;
+}
+
+/* Заголовок */
+.table_head {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.table_title {
+    flex: 1;
+    text-align: center;
+    font-weight: 500;
+    background: linear-gradient(90deg, #6d37fe 0%, #00ffff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 18px;
+}
+
+/* Строки */
+.table_row {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background: $darkblue;
+    z-index: 1;
+}
+
+/* Градиентная рамка у каждой строки */
+.table_row::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 1px;
+    background: linear-gradient(90deg, #1ec9ff, #8f5aff);
+    -webkit-mask:
+        linear-gradient($white 0 0) content-box,
+        linear-gradient($white 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    z-index: -1;
+}
+
+.table_row:last-child::before {
+    border-radius: 12px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+}
+
+.table_text {
+    flex: 1;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 400;
+    color: $white;
+    z-index: 2;
+}
+.first_row {
+    background: linear-gradient(
+        90deg,
+        rgba(42, 15, 112, 0.3) 0%,
+        rgba(0, 153, 153, 0.3) 100%
+    ) !important;
+}
+
+.first_row .table_text {
+    color: $white;
+}

@@ -1,0 +1,111 @@
+@use "../../../app/variables/mixins" as *;
+@use "../../../app/variables/colors" as *;
+
+.container_change {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.text_change {
+    background: $gradient;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    font-weight: 500;
+    font-size: 25px;
+}
+
+.container_calculator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    padding: 30px;
+    border-radius: 12px;
+    margin-top: 133px;
+    width: 605px;
+    height: 499px;
+    background: $darkblue;
+    transition: all 0.3s ease;
+    z-index: 0;
+
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        padding: 1px;
+        border-radius: 12px;
+        background: $gradient;
+        -webkit-mask:
+            linear-gradient($white 0 0) content-box,
+            linear-gradient($white 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        pointer-events: none;
+        z-index: -1;
+        transition: box-shadow 0.3s ease;
+    }
+
+    &.active::before {
+        box-shadow:
+            0 0 15px 3px rgba(109, 55, 254, 0.7),
+            0 0 15px 3px rgba(0, 255, 255, 0.7);
+    }
+}
+
+.btn_run {
+    width: 545px;
+    height: 63px;
+    border: none;
+    border-radius: 12px;
+    padding: 20px;
+    color: $white;
+    background: transparent;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: transform 0.2s ease;
+    font-size: 16px;
+    font-weight: 500;
+    margin-top: 40px;
+    @extend %font-outfit-regular;
+}
+
+.btn_run::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 2px;
+    border-radius: 12px;
+    background: $gradient;
+    -webkit-mask:
+        linear-gradient($white 0 0) content-box,
+        linear-gradient($white 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    z-index: -2;
+}
+
+.btn_run::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 12box;
+    background: $gradient50;
+    z-index: -1;
+    transition: background 0.4s ease;
+}
+
+.btn_run:hover::after {
+    background: $gradient;
+}
+
+.btn_run:hover {
+    transform: translateY(-2px);
+}

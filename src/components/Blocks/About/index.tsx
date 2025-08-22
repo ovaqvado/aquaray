@@ -2,77 +2,56 @@ import * as React from "react";
 import style from "./style.module.scss";
 import Image from "next/image";
 // Images
-import arrow from "../../../images/change.svg";
-import arrow_down from "../../../images/arrow_down.svg";
-import sol from "../../../images/sol.png";
-import usdt_img from "../../../images/usdt.png";
+import sale from "../../../images/sale.svg";
+import blazing from "../../../images/blazing.svg";
+import shield from "../../../images/shield.svg";
+import share from "../../../images/share.svg";
 
 const About = () => {
     return (
-        <div className={style.about}>
+        <div className={style.swap}>
             <div className={style.container_text}>
-                <p className={style.title}>Swap tokens at the speed of light</p>
-                <p className={style.description}>
-                    The most efficient DEX on Solana with ultra-low fees
+                <p className={style.title}>About us</p>
+                <p className={style.subtitle}>
+                    The Next Generation of Swaps on Solana
                 </p>
             </div>
-            <div className={style.container_calculator}>
-                <div className={style.container_change}>
-                    <p className={style.text_change}>Exchange Calculator</p>
-                    <button className={style.btn_change}>
-                        <Image src={arrow} alt="change" />
-                    </button>
+            <p className={style.description}>
+                AquaRay is a decentralized exchange (DEX) built on Solana,
+                designed for maximum speed, minimal fees, and seamless user
+                experience. With cutting-edge smart contracts and integration
+                with Jupiter, AquaRay delivers the most efficient swap routes
+                across the entire Solana ecosystem.
+            </p>
+            <div className={style.card_container}>
+                <div className={style.card}>
+                    <Image src={sale} alt="Low fees" />
+                    <p className={style.title_card}>Low fees</p>
+                    <p className={style.description_card}>
+                        Only 0.1% trading fees, lower than any major DEX on
+                        Solana
+                    </p>
                 </div>
-                <div>
-                    <div className={style.container_swap}>
-                        <div className={style.change_currency}>
-                            <Image
-                                src={sol}
-                                width={40}
-                                height={40}
-                                alt="valut"
-                            />
-                            <p>SOL</p>
-                            <Image
-                                src={arrow_down}
-                                width={16}
-                                height={16}
-                                alt="arrow_down"
-                            />
-                        </div>
-                        <div className={style.valut}>
-                            <p className={style.currency}>1</p>
-                            <p className={style.usd}>$0</p>
-                        </div>
-                    </div>
-                    <div className={style.container_swap}>
-                        <div className={style.change_currency}>
-                            <Image
-                                src={usdt_img}
-                                width={40}
-                                height={40}
-                                alt="valut"
-                            />
-                            <p>USDT</p>
-                            <Image
-                                src={arrow_down}
-                                width={16}
-                                height={16}
-                                alt="arrow_down"
-                            />
-                        </div>
-                        <div className={style.valut}>
-                            <p className={style.currency}>181.694081</p>
-                            <p className={style.usd}>$0</p>
-                        </div>
-                    </div>
-                    <div className={style.rate}>
-                        <p>Rate:</p>
-                        <p>1 SOL ≈ 181.694081 USDT</p>
-                    </div>
+                <div className={style.card}>
+                    <Image src={blazing} alt="Blazing fast" />
+                    <p className={style.title_card}>Blazing fast</p>
+                    <p className={style.description_card}>
+                        Swap transactions complete in under 0.4 seconds
+                    </p>
                 </div>
-                <div>
-                    <button className={style.btn_run}>Start Swapping</button>
+                <div className={style.card}>
+                    <Image src={shield} alt="Secure" />
+                    <p className={style.title_card}>Secure</p>
+                    <p className={style.description_card}>
+                        Rust-based smart contracts with comprehensive audits
+                    </p>
+                </div>
+                <div className={style.card}>
+                    <Image src={share} alt="Integrated" />
+                    <p className={style.title_card}>Integrated</p>
+                    <p className={style.description_card}>
+                        Powered by Jupiter for optimal routing and liquidity
+                    </p>
                 </div>
             </div>
         </div>
