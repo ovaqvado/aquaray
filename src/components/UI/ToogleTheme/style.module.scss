@@ -1,0 +1,36 @@
+@use "../../../app/variables/mixins" as *;
+@use "../../../app/variables/colors" as *;
+
+.box {
+    width: 56px;
+    height: 30px;
+    padding: 2px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    background: $gradient;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    user-select: none;
+}
+
+.thumb {
+    position: absolute;
+    top: 4px;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.right {
+    transform: translateX(24px); // справа
+}
+
+.left {
+    transform: translateX(2px); // слева
+}

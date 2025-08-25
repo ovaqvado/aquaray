@@ -8,6 +8,13 @@
     justify-content: center;
     margin-top: 220px;
     gap: 40px;
+    z-index: 999;
+}
+
+.bg {
+    position: absolute;
+    z-index: 1;
+    width: 100vw;
 }
 
 .container_text {

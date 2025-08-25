@@ -1,9 +1,14 @@
 import * as React from "react";
 import style from "./style.module.scss";
+import Image from "next/image";
+import compareBg from "../../../images/purple.png";
+import compareBg2 from "../../../images/bg2.png";
 
 const Compare = () => {
     return (
         <div className={style.compare}>
+            <Image className={style.bg} src={compareBg} alt="compare_bg" />
+            <Image className={style.bg} src={compareBg2} alt="compare_bg" />
             <div className={style.text_container}>
                 <p className={style.title}>Compare Fees</p>
                 <p className={style.subtitle}>Lower fees. Higher value.</p>

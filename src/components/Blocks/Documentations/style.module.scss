@@ -8,6 +8,7 @@
     align-items: center;
     justify-content: center;
     gap: 40px;
+    z-index: 99;
 }
 
 .text_container {
@@ -23,6 +24,12 @@
     -webkit-text-fill-color: transparent;
     background-clip: text;
     color: transparent;
+}
+
+.bg {
+    position: absolute;
+    z-index: 1;
+    width: 100vw;
 }
 
 .subtitle {

@@ -5,10 +5,14 @@ import Image from "next/image";
 import solLogo from "../../../images/sol.png";
 import rayLogo from "../../../images/ray.svg";
 import orcaLogo from "../../../images/orca.svg";
+import provideB from "../../../images/provideB.png";
+import provideG from "../../../images/provideG.png";
 
 const Provide = () => {
     return (
-        <div className={style.provide}>
+        <div id="liquidity" className={style.provide}>
+            <Image className={style.provideBG} src={provideB} alt="provideB" />
+            <Image className={style.provideBG} src={provideG} alt="provideG" />
             <div className={style.text_container}>
                 <p className={style.title}>Provide Liquidity</p>
                 <p className={style.subtitle}>
@@ -52,18 +56,22 @@ const Provide = () => {
                         </div>
                     </div>
                 </div>
-                <div className={style.box_info}>
-                    <p className={style.title_info}>Your Potential Earnings</p>
-                    <div className={style.text_info}>
-                        <div className={style.text_info_inner}>
-                            APR up to 12%
+                <div className={style.boxxx}>
+                    <div className={style.box_info}>
+                        <p className={style.title_info}>
+                            Your Potential Earnings
+                        </p>
+                        <div className={style.text_info}>
+                            <div className={style.text_info_inner}>
+                                APR up to 12%
+                            </div>
                         </div>
-                    </div>
 
-                    <p className={style.subtitle_text_info}>
-                        Provide liquidity to earn a share of the 0.1% swap fees
-                        proportional to your stake in the pool
-                    </p>
+                        <p className={style.subtitle_text_info}>
+                            Provide liquidity to earn a share of the 0.1% swap
+                            fees proportional to your stake in the pool
+                        </p>
+                    </div>
                 </div>
             </div>
             <p className={style.subtitle}>

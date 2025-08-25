@@ -4,10 +4,12 @@ import Link from "next/link";
 import style from "./style.module.scss";
 // Image
 import arrow from "../../../images/arrow_right.svg";
+import bg from "../../../images/bgDoc.png";
 
 const Documentations = () => {
     return (
         <div id="docs" className={style.documentations}>
+            <Image className={style.bg} src={bg} alt="background" />
             <div className={style.text_container}>
                 <p className={style.title}>Documentation</p>
                 <p className={style.subtitle}>

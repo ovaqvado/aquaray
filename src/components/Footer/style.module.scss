@@ -1,14 +1,27 @@
 @use "../../app/variables/colors";
 .footer {
+    position: relative; // чтобы absolute фон был внутри
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     padding-bottom: 80px;
-    margin-top: 220px;
+    margin-top: 120px;
     padding-left: 100px;
     padding-right: 100px;
-    width: 100;
+    width: 100%;
+    padding-top: 100px;
+    z-index: 1; // контент выше
+}
+
+.bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 240px;
+    object-fit: cover;
+    z-index: -1;
 }
 
 .btn_link {

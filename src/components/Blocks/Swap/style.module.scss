@@ -11,6 +11,19 @@
 
 .container_text {
     text-align: center;
+    z-index: 999;
+}
+
+.bg {
+    position: absolute;
+    z-index: 1;
+    top: 150px;
+}
+
+.bg2 {
+    position: absolute;
+    z-index: 1;
+    top: 300px;
 }
 
 .title {

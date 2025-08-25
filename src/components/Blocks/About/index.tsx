@@ -6,10 +6,12 @@ import sale from "../../../images/sale.svg";
 import blazing from "../../../images/blazing.svg";
 import shield from "../../../images/shield.svg";
 import share from "../../../images/share.svg";
+import bg from "../../../images/bgDoc.png";
 
 const About = () => {
     return (
-        <div className={style.swap}>
+        <div id="about" className={style.swap}>
+            <Image className={style.bg} src={bg} alt="background" />
             <div className={style.container_text}>
                 <p className={style.title}>About us</p>
                 <p className={style.subtitle}>

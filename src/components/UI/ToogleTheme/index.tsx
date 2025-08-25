@@ -1,37 +1,40 @@
-// components/ToogleTheme.tsx
 "use client";
+import * as React from "react";
+import style from "./style.module.scss";
+import Image from "next/image";
 
-import { useState } from "react";
-import { motion } from "framer-motion";
-import { Moon, Sun } from "lucide-react";
+import moon from "../../../images/moonToogle.svg";
+import sun from "../../../images/sunToogle.svg";
 
-export default function ToogleTheme() {
-    const [dark, setDark] = useState(true);
+const ToogleTheme = () => {
+    const [isDark, setIsDark] = React.useState(true);
+
+    // Загружаем тему из localStorage при монтировании
+    React.useEffect(() => {
+        const savedTheme = localStorage.getItem("theme");
+        if (savedTheme) {
+            setIsDark(savedTheme === "dark");
+        }
+    }, []);
+
+    // Сохраняем тему в localStorage при изменении
+    React.useEffect(() => {
+        localStorage.setItem("theme", isDark ? "dark" : "light");
+    }, [isDark]);
+
+    const toggleTheme = () => {
+        setIsDark((prev) => !prev);
+    };
 
     return (
-        <button
-            onClick={() => setDark(!dark)}
-            className="relative w-20 h-10 rounded-full p-1 flex items-center transition-all duration-300"
-            style={{
-                background: "linear-gradient(90deg, #6d37fe 0%, #00ffff 100%)",
-            }}
-        >
-            <motion.div
-                initial={false}
-                animate={{ x: dark ? 0 : 40 }}
-                transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                className="absolute top-1 left-1 w-8 h-8 rounded-full flex items-center justify-center shadow-lg"
-                style={{
-                    backgroundColor: "#0d1b2a", // тёмный фон под иконку
-                    border: "2px solid #00ffff",
-                }}
+        <div className={style.box} onClick={toggleTheme}>
+            <div
+                className={`${style.thumb} ${isDark ? style.right : style.left}`}
             >
-                {dark ? (
-                    <Moon size={18} className="text-cyan-400" />
-                ) : (
-                    <Sun size={18} className="text-yellow-400" />
-                )}
-            </motion.div>
-        </button>
+                <Image src={isDark ? moon : sun} alt="toggle icon" />
+            </div>
+        </div>
     );
-}
+};
+
+export default ToogleTheme;

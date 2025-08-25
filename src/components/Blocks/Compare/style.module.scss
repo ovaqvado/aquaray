@@ -8,10 +8,18 @@
     align-items: center;
     justify-content: center;
     gap: 40px;
+    position: relative;
+}
+
+.bg {
+    position: absolute;
+    z-index: 0;
+    opacity: 0.8;
 }
 
 .text_container {
     text-align: center;
+    z-index: 999;
 }
 
 .title {

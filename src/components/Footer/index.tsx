@@ -3,11 +3,13 @@ import style from "./style.module.scss";
 import Link from "next/link";
 import Image from "next/image";
 import Logo from "../../images/logo.svg";
-import Gradient from "../../images/gradient_footer.svg";
+
+import bg from "../../images/bg_foot.png";
 
 const Footer = () => {
     return (
         <div className={style.footer}>
+            <Image className={style.bg} src={bg} alt="bg" />
             <Link href="/">
                 <Image width={167} height={44} src={Logo} alt="logo" />
             </Link>
