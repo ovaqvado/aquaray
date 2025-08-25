@@ -23,10 +23,24 @@
     -webkit-text-fill-color: transparent;
     background-clip: text;
     color: transparent;
+    @media (max-width: 950px) {
+        font-size: 40px;
+    }
 }
 
 .subtitle {
     font-size: 18px;
+    @media (max-width: 950px) {
+        font-size: 16px;
+        max-width: 690px;
+        text-align: center;
+    }
+    @media (max-width: 769px) {
+        max-width: 456px;
+    }
+    @media (max-width: 470px) {
+        max-width: 336px;
+    }
 }
 
 .container_info {
@@ -35,6 +49,12 @@
     align-items: center;
     justify-content: center;
     gap: 30px;
+    @media (max-width: 950px) {
+        flex-direction: row;
+    }
+    @media (max-width: 769px) {
+        flex-direction: column;
+    }
 }
 
 .cards_container {
@@ -43,6 +63,9 @@
     align-items: center;
     justify-content: center;
     gap: 12px;
+    @media (max-width: 769px) {
+        order: 2;
+    }
 }
 
 .card {
@@ -57,6 +80,22 @@
     overflow: hidden;
     width: 499px;
     height: 86px;
+    @media (max-width: 1270px) {
+        max-width: 445px;
+        max-height: 86px;
+    }
+    @media (max-width: 950px) {
+        max-width: 345px;
+        max-height: 86px;
+    }
+    @media (max-width: 769px) {
+        max-width: 445px;
+        max-height: 86px;
+    }
+    @media (max-width: 470px) {
+        max-width: 335px;
+        max-height: 86px;
+    }
 }
 
 .card_inner {
@@ -71,6 +110,18 @@
     gap: 12px;
     position: relative;
     z-index: 2; // перекрывает provideBG
+    @media (max-width: 1270px) {
+        max-width: 445px;
+        max-height: 86px;
+    }
+    @media (max-width: 950px) {
+        max-width: 345px;
+        max-height: 86px;
+    }
+    @media (max-width: 769px) {
+        max-width: 445px;
+        max-height: 86px;
+    }
 }
 
 .card_text_container {
@@ -82,6 +133,9 @@
 .card_text {
     color: $white;
     font-size: 18px;
+    @media (max-width: 470px) {
+        font-size: 16px;
+    }
 }
 
 .boxxx {
@@ -111,6 +165,22 @@
     border-radius: 12px;
     overflow: hidden;
     z-index: 0;
+    @media (max-width: 1270px) {
+        max-width: 443px;
+        max-height: 282px;
+    }
+    @media (max-width: 950px) {
+        max-width: 395px;
+        max-height: 280px;
+    }
+    @media (max-width: 769px) {
+        order: -1;
+        max-width: 445px;
+    }
+    @media (max-width: 769px) {
+        order: -1;
+        max-width: 335px;
+    }
 }
 
 .box_info::before {
@@ -147,6 +217,14 @@
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    @media (max-width: 1270px) {
+        max-width: 383px;
+        max-height: 63px;
+    }
+    @media (max-width: 1270px) {
+        max-width: 303px;
+        max-height: 63px;
+    }
 }
 
 .text_info_inner {
@@ -159,14 +237,30 @@
     padding: 20px;
     color: $white;
     font-weight: 500;
+    @media (max-width: 1270px) {
+        max-width: 383px;
+        max-height: 63px;
+    }
+    @media (max-width: 950px) {
+        max-width: 303px;
+        max-height: 63px;
+        border-radius: 12px;
+    }
 }
 
 .subtitle_text_info {
     max-width: 400px;
     font-size: 18px;
+    @media (max-width: 470px) {
+        font-size: 16px;
+    }
 }
 
 .provideBG {
     position: absolute;
     z-index: 1;
+    @media (max-width: 1270px) {
+        width: 90%;
+        height: 70%;
+    }
 }

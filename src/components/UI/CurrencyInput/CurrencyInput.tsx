@@ -1,7 +1,9 @@
 "use client";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import style from "./style.module.scss";
 import React from "react";
+// импорт стрелки через ES-модуль
+import arrowDown from "../../../images/arrow_down.svg";
 
 interface CurrencyInputProps {
     value: string;
@@ -24,14 +26,15 @@ const CurrencyInput: React.FC<CurrencyInputProps> = ({
 }) => (
     <div className={`${style.container_swap} ${active ? style.active : ""}`}>
         <div className={style.change_currency}>
-            <Image src={currencyImg} width={40} height={40} alt="currency" />
-            <p className={style.name}>{currencyName}</p>
             <Image
-                src={require("../../../images/arrow_down.svg")}
-                width={16}
-                height={16}
-                alt="arrow_down"
+                className={style.image}
+                src={currencyImg}
+                width={40}
+                height={40}
+                alt="currency"
             />
+            <p className={style.name}>{currencyName}</p>
+            <Image src={arrowDown} width={16} height={16} alt="arrow_down" />
         </div>
         <div className={style.valut}>
             <input

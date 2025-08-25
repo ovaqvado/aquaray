@@ -1,42 +1,195 @@
 @use "../../app/variables/colors" as colors;
+
 .header {
     position: relative;
     display: flex;
-    flex-direction: row;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
     width: 100%;
-    padding: 30px 100px;
-    z-index: 22;
+    padding: 20px;
+    z-index: 1332322;
 }
 
 .bg {
     position: absolute;
     width: 100vw;
-    left: 0px;
+    left: 0;
     z-index: -1;
 }
 
-.navList {
-    font-weight: 400;
+.logo {
+    z-index: 3;
+    @media (max-width: 769px) {
+        display: none; // прячем логотип в шапке на мобилке
+    }
+}
+
+/* ПК-версия */
+.nav {
     display: flex;
-    flex-direction: row;
     align-items: center;
     gap: 40px;
-    cursor: pointer;
+}
+
+.logoMobile {
+    display: none;
+
+    @media (max-width: 769px) {
+        display: block;
+        margin-bottom: 21px;
+    }
+}
+
+.logoMobileHeader {
+    display: none; // по умолчанию скрыто на ПК
+
+    @media (max-width: 769px) {
+        display: block; // показываем на мобильных
+    }
+}
+.themeDesktop {
+    display: block;
+    @media (max-width: 769px) {
+        display: none;
+    }
+}
+
+.themeMobile {
+    display: none;
+    margin-top: 20px;
+    @media (max-width: 769px) {
+        display: block;
+    }
+}
+
+.navList {
+    display: flex;
+    gap: 30px;
     list-style: none;
     font-size: 18px;
-    z-index: 222;
+    cursor: pointer;
 }
 
-.navItem {
+.navList li {
     transition: 0.2s;
+    &:hover {
+        background: colors.$gradient;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
 }
 
-.navItem:hover {
-    background: colors.$gradient;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    color: transparent;
+/* Бургер скрыт на ПК */
+.burger {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    z-index: 3;
+}
+
+/* Мобильная версия */
+@media (max-width: 769px) {
+    .nav {
+        position: fixed;
+        text-align: center;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        height: 100vh;
+        width: 100%;
+        background: #0a0f2c; // основной фон
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 60px;
+        transform: translateX(100%);
+        transition: 0.3s ease-in-out;
+        font-size: 18px;
+        overflow: hidden;
+
+        // Псевдоэлемент для градиента
+        &::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 500px; // регулируйте размер
+            height: 500px;
+            background: radial-gradient(
+                45.94% 45.94% at 50% 50%,
+                #6d37fe50 0%,
+                rgba(10, 34, 58, 0) 100%
+            );
+            z-index: 0;
+            pointer-events: none;
+        }
+    }
+
+    .nav.active {
+        transform: translateX(0);
+    }
+
+    .burger {
+        display: block;
+    }
+
+    .navList {
+        flex-direction: column;
+        gap: 60px;
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 769px) {
+    .btn_link {
+        margin-top: 20px;
+        width: 44px;
+        height: 44px;
+        border-radius: 100px;
+        background: none;
+        border: 1px solid transparent;
+        background-image:
+            linear-gradient(colors.$darkblue, colors.$darkblue),
+            linear-gradient(90deg, #6d37fe, #00ffff);
+        background-origin: border-box;
+        background-clip: content-box, border-box;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        svg path {
+            transition: fill 0.3s ease;
+        }
+
+        &:hover {
+            background: colors.$gradient;
+            border: none;
+            svg path {
+                fill: colors.$white;
+            }
+        }
+    }
+
+    .btns {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+    }
+    .link {
+        z-index: 9999999;
+    }
+}
+
+.btn_mobiles_link {
+    display: none;
+    @media (max-width: 769px) {
+        display: block;
+    }
 }

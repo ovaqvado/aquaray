@@ -19,6 +19,9 @@
     color: transparent;
     font-weight: 500;
     font-size: 25px;
+    @media (max-width: 470px) {
+        font-size: 20px;
+    }
 }
 
 .container_calculator {
@@ -57,6 +60,10 @@
             0 0 15px 3px rgba(109, 55, 254, 0.7),
             0 0 15px 3px rgba(0, 255, 255, 0.7);
     }
+    @media (max-width: 768px) {
+        width: 340px;
+        height: 459px;
+    }
 }
 
 .btn_run {
@@ -76,6 +83,9 @@
     font-weight: 500;
     margin-top: 40px;
     @extend %font-outfit-regular;
+    @media (max-width: 768px) {
+        width: 300px;
+    }
 }
 
 .btn_run::before {
