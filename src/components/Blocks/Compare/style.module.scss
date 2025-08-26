@@ -9,6 +9,13 @@
     justify-content: center;
     gap: 40px;
     position: relative;
+    @media (max-width: 769px) {
+        margin-top: 100px;
+    }
+    @media (min-width: 950px) {
+        padding-bottom: 20px;
+        gap: 30px;
+    }
 }
 
 .bg {
@@ -20,12 +27,29 @@
     }
     @media (max-width: 769px) {
         top: 0px;
-        width: 90%;
-        height: 450px;
-    }
-    @media (max-width: 769px) {
-        top: 0px;
         width: 100%;
+    }
+    @media (max-width: 470px) {
+        display: none;
+    }
+}
+.compareMb {
+    display: none;
+    @media (max-width: 470px) {
+        display: block;
+        position: absolute;
+        z-index: 0;
+        opacity: 0.8;
+    }
+}
+.compareMbGd {
+    display: none;
+    @media (max-width: 470px) {
+        display: block;
+        position: absolute;
+        z-index: 0;
+        opacity: 0.8;
+        margin-top: 100px;
     }
 }
 
@@ -45,6 +69,9 @@
     color: transparent;
     @media (max-width: 950px) {
         font-size: 40px;
+    }
+    @meia (max-width:950px) {
+        font-size: 39px;
     }
 }
 

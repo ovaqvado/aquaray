@@ -9,6 +9,9 @@
     width: 100%;
     margin-bottom: 40px;
     z-index: 999;
+    @media (max-width: 470px) {
+        margin-bottom: 30px;
+    }
 }
 
 .text_change {
@@ -20,7 +23,7 @@
     font-weight: 500;
     font-size: 25px;
     @media (max-width: 470px) {
-        font-size: 20px;
+        font-size: 22px;
     }
 }
 
@@ -29,7 +32,7 @@
     flex-direction: column;
     align-items: center;
     position: relative;
-    padding: 30px;
+    padding: 20px;
     border-radius: 12px;
     margin-top: 133px;
     width: 605px;
@@ -63,6 +66,8 @@
     @media (max-width: 768px) {
         width: 340px;
         height: 459px;
+        margin-top: 40px;
+        padding: 20px;
     }
 }
 
@@ -83,8 +88,16 @@
     font-weight: 500;
     margin-top: 40px;
     @extend %font-outfit-regular;
-    @media (max-width: 768px) {
-        width: 300px;
+    @media (max-width: 470px) {
+        width: 305px;
+        padding: 0px !important;
+        height: 63px !important;
+        font-size: 18px;
+        margin-top: 30px;
+    }
+    @media (max-width: 770px) {
+        width: 305px;
+        padding: 0px !important;
     }
 }
 

@@ -7,12 +7,24 @@ import rayLogo from "../../../images/ray.svg";
 import orcaLogo from "../../../images/orca.svg";
 import provideB from "../../../images/provideB.png";
 import provideG from "../../../images/provideG.png";
+import provideMb from "../../../images/prov_mb.png";
+import prov_mb_gb from "../../../images/prov_mb_gb.png";
 
 const Provide = () => {
     return (
         <div id="liquidity" className={style.provide}>
             <Image className={style.provideBG} src={provideB} alt="provideB" />
             <Image className={style.provideBG} src={provideG} alt="provideG" />
+            <Image
+                className={style.provideMb}
+                src={provideMb}
+                alt="provideMb"
+            />
+            <Image
+                className={style.prov_mb_gb}
+                src={prov_mb_gb}
+                alt="prov_mb_gb"
+            />
             <div className={style.text_container}>
                 <p className={style.title}>Provide Liquidity</p>
                 <p className={style.subtitle}>

@@ -15,6 +15,21 @@
     width: 100vw;
     left: 0;
     z-index: -1;
+    @media (max-width: 470px) {
+        display: none;
+    }
+}
+.bg_mb {
+    display: none;
+
+    @media (max-width: 470px) {
+        display: block;
+        position: absolute;
+        width: 100vw;
+        left: 0;
+        margin-top: 40px;
+        z-index: -1;
+    }
 }
 
 .logo {
@@ -103,7 +118,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        gap: 60px;
+        gap: 30px;
         transform: translateX(100%);
         transition: 0.3s ease-in-out;
         font-size: 18px;
@@ -138,14 +153,14 @@
 
     .navList {
         flex-direction: column;
-        gap: 60px;
+        gap: 30px;
         font-size: 22px;
     }
 }
 
 @media (max-width: 769px) {
     .btn_link {
-        margin-top: 20px;
+        margin-top: 10px;
         width: 44px;
         height: 44px;
         border-radius: 100px;
@@ -192,4 +207,25 @@
     @media (max-width: 769px) {
         display: block;
     }
+}
+
+.topBug {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.rightBug {
+    position: absolute;
+    right: 0;
+    top: 127px;
+}
+.leftBug {
+    position: absolute;
+    left: 0;
+    bottom: 60px;
+}
+.bottomBug {
+    position: absolute;
+    bottom: 0;
+    right: 0;
 }

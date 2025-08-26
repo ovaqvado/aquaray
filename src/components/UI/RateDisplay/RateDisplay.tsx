@@ -9,8 +9,8 @@ interface RateDisplayProps {
 
 const RateDisplay: React.FC<RateDisplayProps> = ({ rate, isReversed }) => (
     <div className={style.rate}>
-        <p>Rate:</p>
-        <p>
+        <p className={style.text}>Rate:</p>
+        <p className={style.text}>
             {isReversed
                 ? `1 USDT ≈ ${(1 / rate).toFixed(6)} SOL`
                 : `1 SOL ≈ ${rate} USDT`}

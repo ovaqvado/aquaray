@@ -2,12 +2,20 @@
 import * as React from "react";
 import Image from "next/image";
 import styles from "./style.module.scss";
-import Logo from "@/images/logo.svg";
-import bg from "@/images/bg_head.png";
+
 import Link from "next/link";
 import ToogleTheme from "../UI/ToogleTheme";
 import { HiMenu, HiX } from "react-icons/hi";
 import { useEffect } from "react";
+
+//Images
+import Logo from "@/images/logo.svg";
+import bg from "@/images/bg_head.png";
+import bg_mb from "@/images/head_mb.png";
+import top from "@/images/top_bug.png";
+import right from "@/images/right_bug.png";
+import left from "@/images/left_bug.png";
+import bottom from "@/images/bottom_bug.png";
 
 const Header = () => {
     const [menuOpen, setMenuOpen] = React.useState(false);
@@ -35,6 +43,7 @@ const Header = () => {
     return (
         <header className={styles.header}>
             <Image className={styles.bg} src={bg} alt="bg" />
+            <Image className={styles.bg_mb} src={bg_mb} alt="bg" />
 
             {/* Лого только для ПК */}
             <div className={styles.logo}>
@@ -56,6 +65,30 @@ const Header = () => {
 
             {/* Навигация */}
             <nav className={`${styles.nav} ${menuOpen ? styles.active : ""}`}>
+                {menuOpen && (
+                    <>
+                        <Image
+                            className={styles.topBug}
+                            src={top}
+                            alt="top bug"
+                        />
+                        <Image
+                            className={styles.rightBug}
+                            src={right}
+                            alt="right bug"
+                        />
+                        <Image
+                            className={styles.leftBug}
+                            src={left}
+                            alt="left bug"
+                        />
+                        <Image
+                            className={styles.bottomBug}
+                            src={bottom}
+                            alt="bottom bug"
+                        />
+                    </>
+                )}
                 {/* Лого внутри открытого меню */}
                 <div className={styles.logoMobile}>
                     <Link href="/">

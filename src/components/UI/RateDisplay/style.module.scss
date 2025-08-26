@@ -10,3 +10,9 @@
     color: $gray;
     font-size: 14px;
 }
+
+@media (max-width: 470px) {
+    .text {
+        font-size: 14px;
+    }
+}

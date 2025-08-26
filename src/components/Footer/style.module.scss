@@ -1,6 +1,6 @@
 @use "../../app/variables/colors";
 .footer {
-    position: relative; // чтобы absolute фон был внутри
+    position: relative;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -16,6 +16,9 @@
         flex-direction: column;
         gap: 30px;
     }
+    @media (max-width: 470px) {
+        margin-top: 0px;
+    }
 }
 
 .bg {
@@ -27,7 +30,7 @@
     object-fit: cover;
     z-index: -1;
     @media (max-width: 769px) {
-        height: 355px;
+        display: none;
     }
 }
 
@@ -75,5 +78,6 @@
     text-align: center;
     @media (max-width: 950px) {
         font-size: 16px;
+        width: 100vw;
     }
 }

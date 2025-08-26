@@ -7,11 +7,16 @@ import Image from "next/image";
 // Images
 import bSwap from "../../../images/bSwap.png";
 import gSwap from "../../../images/gSwap.png";
+import swapMb from "../../../images/swap_mb.png";
+import swapMbGD from "../../../images/gradient_mobile.png";
 
 const Swap = () => (
     <div className={style.swap}>
         <Image src={gSwap} alt="gSwap" className={style.bg2} />
         <Image src={bSwap} alt="bSwap" className={style.bg} />
+        <Image src={swapMb} alt="bSwap" className={style.bg_mb} />
+        <Image src={swapMbGD} alt="bSwap" className={style.bg_mb} />
+
         <div className={style.container_text}>
             <p className={style.title}>Swap tokens at the speed of light</p>
             <p className={style.description}>

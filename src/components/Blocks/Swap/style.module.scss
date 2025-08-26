@@ -10,6 +10,10 @@
 }
 
 .container_text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-align: center;
     z-index: 999;
 }
@@ -21,6 +25,23 @@
     @media (max-width: 1270px) {
         width: 90%;
     }
+    @media (max-width: 470px) {
+        display: none;
+    }
+}
+.bg_mb {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    top: 270px;
+    @media (max-width: 470px) {
+        display: block;
+
+        top: 260px;
+        height: 570px;
+        transform: rotate(360deg);
+        opacity: 1;
+    }
 }
 
 .bg2 {
@@ -29,6 +50,9 @@
     top: 300px;
     @media (max-width: 1270px) {
         width: 90%;
+    }
+    @media (max-width: 950px) {
+        display: none;
     }
 }
 
@@ -45,7 +69,7 @@
         font-size: 40px;
     }
     @media (max-width: 769px) {
-        font-size: 40px;
+        font-size: 39px;
         max-width: 470px;
     }
 }
@@ -56,7 +80,8 @@
         font-size: 16px;
     }
     @media (max-width: 769px) {
-        max-width: 470px;
+        max-width: 370px;
+        width: 260px;
     }
 }
 
@@ -93,24 +118,6 @@
             #00ffff
         ); // градиент при наведении
     }
-}
-
-.container_calculator {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-    padding: 30px;
-    gap: 40px;
-    border-radius: 12px;
-    margin-top: 133px;
-    width: 605px;
-    height: 499px;
-    background: $darkblue;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
 }
 
 .container_swap {
@@ -258,6 +265,9 @@ $gradient50: linear-gradient(
 );
 
 .btn_run {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 545px;
     height: 63px;
     border: none;
@@ -272,6 +282,10 @@ $gradient50: linear-gradient(
     transition: transform 0.2s ease;
     font-size: 16px;
     font-weight: 500;
+    @media (max-width: 470px) {
+        width: 305px;
+        padding: 0px !important;
+    }
 }
 
 .btn_run::before {

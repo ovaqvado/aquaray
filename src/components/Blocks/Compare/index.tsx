@@ -3,12 +3,24 @@ import style from "./style.module.scss";
 import Image from "next/image";
 import compareBg from "../../../images/purple.png";
 import compareBg2 from "../../../images/bg2.png";
+import compareMb from "../../../images/compareMb.png";
+import compareMbGd from "../../../images/compareMbGd.png";
 
 const Compare = () => {
     return (
         <div className={style.compare}>
             <Image className={style.bg} src={compareBg} alt="compare_bg" />
             <Image className={style.bg} src={compareBg2} alt="compare_bg" />
+            <Image
+                className={style.compareMb}
+                src={compareMb}
+                alt="compareMb"
+            />
+            <Image
+                className={style.compareMbGd}
+                src={compareMbGd}
+                alt="compareMbGd"
+            />
             <div className={style.text_container}>
                 <p className={style.title}>Compare Fees</p>
                 <p className={style.subtitle}>Lower fees. Higher value.</p>
